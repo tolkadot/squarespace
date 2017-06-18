@@ -1,0 +1,57 @@
+<div id="tolka-boxes">
+<div style="top: 50%; left: 50%; display: none;" id="dialog-tolka" class="window-tolka">
+<div id="tolka-popup-area">
+<h2 class=tolka-h2> Select Region </h2>
+
+<div class="tolka-select-region">
+
+  <div class="tolka-option" id="option1" data-clicked="no" value="asia">
+    <img src="https://dee-bryant-lezz.squarespace.com/s/new_zealand_round_icon_640.png"/>
+    <div>Asia</div>
+  </div>
+   <div class="tolka-option" id="option2" data-clicked="no" value="australia">
+     <img src="https://dee-bryant-lezz.squarespace.com/s/new_zealand_round_icon_640.png"/>
+     <div>Australia</div>
+   </div>
+  <div class="tolka-option" id="option3" data-clicked="no" value="usa" style="background:#a5a5a5">
+    <img src="https://dee-bryant-lezz.squarespace.com/s/new_zealand_round_icon_640.png"/>
+     <div>USA</div>
+  </div>
+  <div class="tolka-option" id="option4" data-clicked="no"value="europe">
+    <img src="https://dee-bryant-lezz.squarespace.com/s/new_zealand_round_icon_640.png"/>
+  <div>Europe</div>
+</div>
+  <div class="tolka-option" id="option5" data-clicked="no" value="uk">
+    <img src="https://dee-bryant-lezz.squarespace.com/s/new_zealand_round_icon_640.png"/>
+    <div>UK</div>
+  </div>
+ <div class="tolka-option" id="option6" data-clicked="no" value="newzealand">
+   <img src="https://dee-bryant-lezz.squarespace.com/s/new_zealand_round_icon_640.png"/>
+ <div>New Zealand</div>
+</div>
+</div>
+
+<form>
+  <div class="tolka-city">
+    <input class="tolka-input" type='text' id='city' name='city' value='' placeholder="Enter the City or Suburb">
+  </div>
+ <div>
+   <h3 class=tolka-h3>Looking For</h3>
+   <div class="tolka-radio">
+ <input type="radio" name="locationtype" value="agent" id="tolka-radio1" checked="checked">
+  <label for="tolka-radio1">Agent</label>
+ <input type="radio" name="locationtype" value="center" id="tolka-radio2">  <label for="tolka-radio2">Center</label>
+   </div>
+   </div>
+  
+  <input class='tolka-find-btn' type="button" value="Find Distributors" onclick="relocate()">
+  </form>
+
+ <div><a href="#" class="tolka-close"> No thanks, I'll search on my own</a></div>
+
+
+
+</div>
+</div>
+<div style="opacity: 0.4;" id="mask-tolka"></div>
+</div>
