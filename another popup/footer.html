@@ -1,0 +1,190 @@
+<script>
+$(document).ready(function() { 
+
+function onPopupOpen() {
+  $("#modal-content").show();
+}
+
+function onPopupClose() {
+  $("#modal-content").hide();
+  Cookies.set('colorboxShown', 'yes', {
+    expires: 1
+  });
+}
+
+function displayPopup() {
+  $.colorbox({
+    inline: true,
+    href: "#modal-content",
+    className: "cta",
+    width: 350,
+    height: 420,
+    onComplete: onPopupOpen,
+    onClosed: onPopupClose
+  });
+}
+
+var popupShown = Cookies.get('colorboxShown');
+
+if (!popupShown) {
+  setTimeout(function() {
+    displayPopup();
+  }, 7000);
+}
+
+  $("#close-popup").on("click", function() {
+ $.colorbox.close();
+});
+  
+  $("#close-popup-after").on("click", function() {
+  $.colorbox.close();
+});
+
+  
+ $( "#header" ).append( "<div class='tab-semi-circle' > <p class='discount-tab'> $30 OFF</p>  <p class='discount-tab'>discount code </p></div>" );
+  
+  var $window = $(window), $stickyEl = $('.tab-semi-circle'),elTop = $stickyEl.offset().top;
+
+   $window.scroll(function() {
+        $stickyEl.toggleClass('sticky', $window.scrollTop() > elTop);
+    });
+   
+  $('.tab-semi-circle').on("click", function(){
+  displayPopup()
+});
+ 
+  });
+  </script>
+
+<style>
+#modal-content {
+  display: none;
+}
+.tab-semi-circle.sticky {position: fixed;top: 0;}
+  
+ .tab-semi-circle {
+    position: absolute;
+    background-color: black;
+    width: 180px;
+    height: 50px;
+    border-radius: 50% / 100%;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    color: white;
+    font-family: "proxima-nova";
+   font-size: 12px;
+   box-shadow: 2px 2px 10px  #222;
+   right:100px;
+}
+ .discount-tab {
+  text-align: center;
+  margin: 5px;}
+.discount-tab:first-child {
+    margin-bottom: 0px; }
+.discount-tab:last-child {
+  margin-top: 0px; }
+  
+#cboxOverlay {
+  background: black;
+  opacity: 0.5 !important;} 
+#cboxLoadedContent {
+     background: black;
+    color: white;
+    border-radius: 10px;
+  }
+  .pop-up-header{
+  color: white;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 20px 0px 20px !important ;
+  }
+  .pop-up-text{
+     width: 60%;
+    display: block;
+    margin: 20px auto;
+  font-size: 12px;
+  text-align: center;}
+  
+  .pop-up-button {
+    background-color:  #ED2F31;
+    color: white;
+    text-transform: uppercase;
+    width: 70% !important;
+    margin-bottom: 10px;
+    height: 30px;
+    border-radius: 27.5px;
+    display: block;
+    margin: 20px auto;
+    border: none;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .pop-up-button:hover,  .pop-up-button:active { background-color: #ce2929}
+
+  #close-popup{
+  color: grey;
+  text-decoration: underline;
+  text-align: center;
+  display: block;
+  }
+  
+  #close-popup-after{
+  color: grey;
+  text-decoration: underline;
+  text-align: center;
+  display: block;
+  }
+
+ a#close-popup:hover, a#close-popup-after:hover {
+ cursor:pointer;
+}
+  
+.pop-up-image{
+  height: 50px;
+  width: 280px;
+  border-radius: 10px;
+  margin: auto;
+  background-image: url(https://static1.squarespace.com/static/594202b63e00bea46b8c7d9b/t/5966d49c46c3c4c510948ae1/1499911434207/embody_popup_background_image.jpg);
+  background-position: center center;
+}
+  
+  #cboxTopCenter, #cboxBottomCenter, #cboxMiddleLeft, #cboxMiddleRight, #cboxBottomLeft, #cboxBottomRight, #cboxTopRight, #cboxTopLeft {
+ display: none;
+  }
+  #cboxContent {
+  background: none;}
+  
+  #cboxClose {
+  display: none;}
+  
+  
+  #modal-content input {width: 90%;
+    margin-bottom: 10px;
+    height: 30px;
+    border-radius: 27.5px;
+    display: block;
+    margin: 20px auto;
+    border: none;
+    font-size: 14px;
+    text-align: center;}
+  
+   #modal-content {
+  display:none}
+  
+#cboxLoadedContent {
+  padding: 10px;
+}
+
+#modal-content label {
+  display: block;
+  margin-bottom: 5px;
+}
+#block-yui_3_17_2_4_1499910902078_9962 {
+  display:none;}
+
+  #collection-59420308e58c624bbb9fedbf .newsletter-block {
+  display:none;}
+  
+</style>
